@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -17,7 +17,6 @@
     <ProjectReference Include="..\SIS.Core\SIS.Core.csproj" />
     <ProjectReference Include="..\SIS.Data\SIS.Data.csproj" />
     <ProjectReference Include="..\SIS.Entities\SIS.Entities.csproj" />
-    <ProjectReference Include="..\SIS.Models\SIS.Models.csproj" />
     <ProjectReference Include="..\SIS.Services\SIS.Services.csproj" />
   </ItemGroup>
 

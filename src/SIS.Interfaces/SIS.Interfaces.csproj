@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SIS.Core\SIS.Core.csproj" />
     <ProjectReference Include="..\SIS.Entities\SIS.Entities.csproj" />
+    <ProjectReference Include="..\SIS.Models2\SIS.Models.csproj" />
   </ItemGroup>
 
 </Project>
