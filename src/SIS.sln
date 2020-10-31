@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.Entities", "SIS.Entitie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.Interfaces", "SIS.Interfaces\SIS.Interfaces.csproj", "{70069A35-6BE1-446D-B9EF-B00A37DFA5E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS.Models", "SIS.Models\SIS.Models.csproj", "{D924B43D-C8F3-4A25-B37B-1AB5CC223CDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIS.Models", "SIS.Models\SIS.Models.csproj", "{D924B43D-C8F3-4A25-B37B-1AB5CC223CDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS.Client", "SIS.Client\SIS.Client.csproj", "{1D7B0387-0821-4C77-B0CF-F637B9131405}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D924B43D-C8F3-4A25-B37B-1AB5CC223CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D924B43D-C8F3-4A25-B37B-1AB5CC223CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D924B43D-C8F3-4A25-B37B-1AB5CC223CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7B0387-0821-4C77-B0CF-F637B9131405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7B0387-0821-4C77-B0CF-F637B9131405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7B0387-0821-4C77-B0CF-F637B9131405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7B0387-0821-4C77-B0CF-F637B9131405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,14 +9,17 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SIS.Client\SIS.Client.csproj" />
     <ProjectReference Include="..\SIS.Core\SIS.Core.csproj" />
     <ProjectReference Include="..\SIS.Data\SIS.Data.csproj" />
     <ProjectReference Include="..\SIS.Entities\SIS.Entities.csproj" />
+    <ProjectReference Include="..\SIS.Models\SIS.Models.csproj" />
     <ProjectReference Include="..\SIS.Services\SIS.Services.csproj" />
   </ItemGroup>
 

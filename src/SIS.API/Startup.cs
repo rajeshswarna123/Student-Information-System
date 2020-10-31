@@ -37,6 +37,10 @@ namespace SIS.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
+            services.AddRazorPages();
+
             services.AddControllers();
 
             services.AddHttpContextAccessor();
@@ -65,13 +69,19 @@ namespace SIS.API
 
             app.UseHttpsRedirection();
 
+            app.UseBlazorFrameworkFiles();
+
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
             });
         }
 
