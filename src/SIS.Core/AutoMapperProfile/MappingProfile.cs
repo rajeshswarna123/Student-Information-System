@@ -2,6 +2,7 @@
 using SIS.Core.ClientContext;
 using SIS.Entities;
 
+
 namespace SIS.Core.AutoMapperProfile
 {
     public class MappingProfile : Profile
@@ -9,6 +10,10 @@ namespace SIS.Core.AutoMapperProfile
         public MappingProfile()
         {
             CreateMap<UserProfile, User>().ReverseMap();
+
+            CreateMap<Student, Models.Student>().ReverseMap();
+
+            CreateMap<Marks, Models.Marks>().ReverseMap();
         }
     }
 }

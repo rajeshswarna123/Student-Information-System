@@ -56,6 +56,8 @@ namespace SIS.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -96,8 +98,16 @@ namespace SIS.API
             services.AddScoped<IClientContext, ClientContext>();
 
             services.AddScoped<ISecurityService, SecurityService>();
+            services.AddScoped<IStudentService, StudentService>();
+
 
             services.AddScoped<ISecurityRepository, SecurityRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IClassCurriculumRepository, ClassCurriculumRepository>();
+            services.AddScoped<ISubjectRepository, SubjectRepository>();
+            services.AddScoped<IMarksRepository, MarksRepository>();
+
         }
 
         public void ConfigureAuth(IServiceCollection services)
