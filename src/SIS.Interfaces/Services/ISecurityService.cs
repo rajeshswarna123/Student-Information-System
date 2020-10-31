@@ -1,4 +1,5 @@
 ﻿using SIS.Core.ClientContext;
+using SIS.Models;
 
 namespace SIS.Interfaces.Services
 {

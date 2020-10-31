@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIS.Models;
+using System;
 
 namespace SIS.Core.ClientContext
 {
