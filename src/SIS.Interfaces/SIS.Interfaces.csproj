@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SIS.Core\SIS.Core.csproj" />
+    <ProjectReference Include="..\SIS.Entities\SIS.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

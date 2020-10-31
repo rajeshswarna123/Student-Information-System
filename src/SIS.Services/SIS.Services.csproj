@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SIS.Core\SIS.Core.csproj" />
+    <ProjectReference Include="..\SIS.Interfaces\SIS.Interfaces.csproj" />
+    <ProjectReference Include="..\SIS.Models\SIS.Models.csproj" />
+  </ItemGroup>
+
 </Project>
