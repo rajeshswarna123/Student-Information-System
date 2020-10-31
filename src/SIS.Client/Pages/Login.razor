@@ -1,4 +1,7 @@
-﻿@page "/login"
+﻿@inject Blazored.LocalStorage.ILocalStorageService localStore
+@page "/login"
+@using SIS.Models
+@using Newtonsoft.Json;
 
 <section class="section-conten padding-y bg">
 
@@ -44,8 +47,27 @@
 @code {
     private int currentCount = 0;
 
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
     private void IncrementCount()
     {
         currentCount++;
+    }
+    private readonly LoginRequest model = new LoginRequest();
+
+    public bool ShowErrors { get; set; }
+
+    public IEnumerable<string> Errors { get; set; }
+    private async Task SubmitAsync()
+    {
+        var httpClient = new HttpClient();
+
+        var response = await httpClient.PostAsJsonAsync("https://localhost:44340/api/security/signin", model);
+        Console.WriteLine(response.Content.ReadAsStringAsync());
+
+        var user = JsonConvert.DeserializeObject<UserProfile>(await response.Content.ReadAsStringAsync());
+        await localStore.SetItemAsync("UserToken", user.Token);
+        NavigationManager.NavigateTo("/fetchdata");
     }
 }
