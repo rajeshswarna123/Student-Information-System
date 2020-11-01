@@ -5,3 +5,5 @@
 */*/obj
 */*/bin
 /src/.vs
+/src/SIS.DB/Import Schema Logs
+/src/SIS.DB/Import Script Logs
