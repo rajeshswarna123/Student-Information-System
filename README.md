@@ -5,7 +5,7 @@
 ## Developed Using 
 - [.NET Core](https://www.microsoft.com/net/core/platform)
 - [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
-- [Blazor] (https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
+- [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 
 ## Run on Visual Studio - You should have Visual Studio installed along with .Net Core SDK
   1. Clone or Download the reposirtory.
