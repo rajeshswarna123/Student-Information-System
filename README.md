@@ -34,3 +34,7 @@
   7. Change connection string in ```/SIS/SIS.API/appsettings.json``` file with key ```ConnectionString```
   8. Now you are ready to go 🥳🥳
   
+  
+   By now after running if you go to `/swagger` URL you should be seeing the gorgeous Swagger UI 😍
+   ![SwaggerUI](./SIS_Gallery/swagger.gif)
+  
