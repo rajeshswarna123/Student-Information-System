@@ -22,6 +22,10 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using SIS.Core.AutoMapperProfile;
 using AutoMapper;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
+using System.Reflection;
+using System.IO;
 
 namespace SIS.API
 {
@@ -47,6 +51,8 @@ namespace SIS.API
 
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
+            ConfigureSwagger(services);
+
             ConfigureSettings(services);
             
             ConfigureDBSettings(services);
@@ -60,7 +66,14 @@ namespace SIS.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+
             app.UseAuthentication();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Student Information System API - V1");
+            });
 
             if (env.IsDevelopment())
             {
@@ -155,6 +168,35 @@ namespace SIS.API
             {
                 options.MinimumSameSitePolicy = SameSiteMode.Strict;
                 options.HttpOnly = HttpOnlyPolicy.None;
+            });
+        }
+
+        public void ConfigureSwagger(IServiceCollection services)
+        {
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AddressBook API", Version = "V1" });
+
+                c.SwaggerDoc("public", new OpenApiInfo { Title = "AddressBook API - Public", Version = "Public" });
+
+                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer "
+                });
+
+
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
+                //c.OperationFilter<AddHeaderOperationFilter>("TenantId", "", false);
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
     }
